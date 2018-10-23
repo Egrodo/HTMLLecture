@@ -3,8 +3,8 @@
 <head>
   <style>
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      margin: 10vh 30vw;
+      font-family: Helvetica, Arial, sans-serif;
+      margin: 2vh 20vw;
       box-sizing: border-box;
     }
 
@@ -18,6 +18,8 @@
     header>h1 {
       text-align: center;
       margin: 0;
+      font-family: Helvetica, sans-serif;
+      text-decoration: underline;
     }
 
     div.content {
@@ -30,11 +32,18 @@
     }
 
     .content>h2 {
-      margin: 0;
+      margin: 0 0 .5em 0;
+      font-size: 1.3em;
     }
 
-    img {
-      padding: .5em;
+    img.cat {
+      width: calc(100% - .5em);
+    }
+
+    @media screen and (min-width: 1300px) {
+      img.cat {
+        max-width: 750px;
+      }
     }
 
     label {
@@ -42,8 +51,8 @@
       font-size: .8em;
     }
 
-    h4 {
-      margin-top: 3em;
+    h3 {
+      margin-top: 2em;
       margin-bottom: .5em;
     }
 
@@ -54,18 +63,26 @@
       text-justify: distribute;
     }
 
-    footer {
+    p>span.bold {
+      font-weight: bold;
+    }
+
+    button.catBtn {
+      display: inline-block;
+      padding: .5em 1.5em;
+      margin: 0 0.1em 0.1em 0;
+      border: .16em solid transparent;
+      border-radius: 2em;
+      text-decoration: none;
       text-align: center;
-      font-size: .8em;
-      color: #00aeff;
+      transition: all .2s;
+      background-color: orange;
+      color: white;
+      font-size: 1.2em;
     }
 
-    footer::before {
-      content: '\00a9';
-    }
-
-    footer:hover {
-      text-decoration: underline;
+    button.catBtn:hover {
+      border-color: black;
       cursor: pointer;
     }
   </style>
@@ -82,20 +99,23 @@
       Here's a picture of some cats!
     </h2>
     <div>
-      <img src="https://cdn2.thecatapi.com/images/2eo.jpg" alt="Cats">
+      <img class="cat" src="https://cdn2.thecatapi.com/images/2eo.jpg" alt="Cats" title="Some fuzzy boi's">
       <label>Gato is another word for cat. Thanks 8th grade Spanish!</label>
     </div>
-    <h4>Random Filler Text</h4>
+    <h3>Random Filler Text</h3>
     <p>
       The above represents a cat. That cat is a mighty fine cat, it has whiskers and claws most likely. There is a
       person to the left of the cats (or their right, I suppose). I wonder if the cats are siblings, they look
       similar but the one in the foreground has a white face while the other has a brown face. Could this be typical
-      family genetic diversion, or does it mean that the cats are brotha's&ndash;from&ndash;different&ndash;motha's?
+      family genetic diversion, or does it mean that the cats are <span class="bold">brotha's&ndash;from&ndash;different&ndash;motha's?</span>
       There is more I could talk about the cats or even about the background, but this is enough filler text for now.
     </p>
-    <footer>
-      Made by Noah Yamamoto
-    </footer>
+    <a href="https://thecatapi.com/" alt="Cat link" title="Click me to see a random cat!" class="catLink" target="_blank"
+      rel="noreferral noopener">
+      <button class="catBtn">
+        Random Cat Button
+      </button>
+    </a>
   </div>
 </body>
 
